@@ -15,7 +15,7 @@ class Conexao {
     public function __construct($servidor, $banco, $usuario, $senha) {
 
         if (self::$pdo == null) {
-            $dns = "mysql:host={$servidor};dbname={$banco};charset=utf8";
+            $dsn = "mysql:host={$servidor};dbname={$banco};charset=utf8";
             self::$pdo = new \PDO($dsn, $usuario, $senha);
             self::$pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
         }
