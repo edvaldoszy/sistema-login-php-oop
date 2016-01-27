@@ -12,7 +12,6 @@ class Conexao {
 	 * @param string $usuario 
 	 * @param string $senha 
 	 */
-
 	public function __construct($servidor, $banco, $usuario, $senha) {
 
 		if (self::$pdo == null) {
