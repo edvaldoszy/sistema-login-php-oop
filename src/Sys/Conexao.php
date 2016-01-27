@@ -7,17 +7,17 @@ class Conexao {
 	private static $pdo;
 
 	/**
-	*@param string $servidor 
-	*@param string $banco 
-	*@param string $usuario 
-	*@param string $senha 
-	*/
+	 * @param string $servidor 
+	 * @param string $banco 
+	 * @param string $usuario 
+	 * @param string $senha 
+	 */
 
 	public function __construct($servidor, $banco, $usuario, $senha) {
 
 		if (self::$pdo == null) {
 			$dsn = "mysql:host={$servidor};dbname={$banco};charset=utf8";
-			self::$pdo = new \PDO($dns, $usuario, $senha);
+			self::$pdo = new \PDO($dsn, $usuario, $senha);
 			self::$pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
 		}
 	}
@@ -54,6 +54,7 @@ class Conexao {
 	 * @return boolean
 	 */
 	public function executar($sql, array $argumentos = array()) {
+		
 		$stmt = $this->preparar($sql, $argumentos);
 		return $stmt->execute();
 	}
