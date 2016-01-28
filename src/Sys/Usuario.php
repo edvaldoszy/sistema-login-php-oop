@@ -21,19 +21,19 @@ class Usuario
 	}
 
 	/**
-	 * @param string $login
+	 * @param string $email
 	 * @param string $senha
 	 * @return object
 	 * @throws ValidacaoException
 	 */
-	public function validar($login, $senha) {
+	public function validar($email, $senha) {
 
-		if (empty($login) || empty($senha))
+		if (empty($email) || empty($senha))
 			throw new ValidacaoException('Preencha o login e senha');
 
 		$rs = $this->con->selecionar(
-			'SELECT * FROM usuarios WHERE login = ? AND senha = ? AND ativo = ? LIMIT 1',
-			array($login, $senha, self::ATIVO)
+			'SELECT * FROM usuarios WHERE email = ? AND senha = ? AND ativo = ? LIMIT 1',
+			array($email, $senha, self::ATIVO)
 		);
 
 		if (count($rs) < 1)
