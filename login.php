@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-responsive.min.css">
 	<style>
